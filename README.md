@@ -13,7 +13,7 @@ commitizen convention for edb jira standard
 ### Installation
 
 ```bash
-npm install commitizen @digitalroute/cz-conventional-changelog-for-jira
+npm install commitizen git+ssh://git@github.com:leo-jin-edb/cz-conventional-changelog-for-edb-jira.git
 ```
 
 and then add the following to package.json:
@@ -25,7 +25,7 @@ and then add the following to package.json:
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira"
+      "path": "./node_modules/cz-conventional-changelog-for-edb-jira"
     }
   }
 }
@@ -57,6 +57,7 @@ Like commitizen, you can specify the configuration of cz-conventional-changelog-
 Alternatively, if you want to create your own profile, you can use the _configurable_ approach.  
 Here is an example:  
 **./index.js**
+
 ```javascript
 const custom = require('@digitalroute/cz-conventional-changelog-for-jira/configurable');
 // You can do this optionally if you want to extend the commit types
@@ -74,7 +75,9 @@ module.exports = custom({
   scopes: ['myScope1', 'myScope2']
 });
 ```
+
 **./package.json**
+
 ```json
 {
   "config": {
@@ -85,27 +88,28 @@ module.exports = custom({
 }
 ```
 
-This example would:  
-* Display _"perf"_ as an extra commit type
-* Ask you to add a commit scope
-* Limit the scope selection to either `myScope` or `myScope2`
+This example would:
+
+- Display _"perf"_ as an extra commit type
+- Ask you to add a commit scope
+- Limit the scope selection to either `myScope` or `myScope2`
 
 List of all supported configurable options when using the _configurable_ approach:  
-| Key            | Default   | Description                                                                                                                                                           |
+| Key | Default | Description |
 | -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| jiraMode       | true      | If this is set to true, CZ will ask for a Jira issue and put it in the commit head. If set to false CZ will ask for the issue in the end, and can be used for GitHub. |
-| maxHeaderWidth | 72        | This limits how long a commit message head can be.                                                                                                                    |
-| minHeaderWidth | 2         | This limits how short a commit message can be.                                                                                                                        |
-| maxLineWidth   | 100       | Commit message bodies are automatically wrapped. This decides how long the lines will be.                                                                             |
-| skipScope      | true      | If scope should be used in commit messages.                                                                                                                           |
-| defaultType    | undefined | The default type.                                                                                                                                                     |
-| defaultScope   | undefined | The default scope.                                                                                                                                                    |
-| defaultSubject | undefined | A default subject.                                                                                                                                                    |
-| defaultBody    | undefined | A default body.                                                                                                                                                       |
-| defaultIssues  | undefined | A default issue.                                                                                                                                                      |
-| jiraPrefix     | 'DAZ'     | The default JIRA ticket prefix that will be displayed.                                                                                                                |
-| types          | ./types.js| A list (JS Object) of supported commit types.                                                                                                                         |
-| scopes         | undefined | A list (JS Array) of scopes that will be available for selection. Note that adding this will change the scope field from Inquirer 'input' to 'list'.                  |
+| jiraMode | true | If this is set to true, CZ will ask for a Jira issue and put it in the commit head. If set to false CZ will ask for the issue in the end, and can be used for GitHub. |
+| maxHeaderWidth | 72 | This limits how long a commit message head can be. |
+| minHeaderWidth | 2 | This limits how short a commit message can be. |
+| maxLineWidth | 100 | Commit message bodies are automatically wrapped. This decides how long the lines will be. |
+| skipScope | true | If scope should be used in commit messages. |
+| defaultType | undefined | The default type. |
+| defaultScope | undefined | The default scope. |
+| defaultSubject | undefined | A default subject. |
+| defaultBody | undefined | A default body. |
+| defaultIssues | undefined | A default issue. |
+| jiraPrefix | 'DAZ' | The default JIRA ticket prefix that will be displayed. |
+| types | ./types.js| A list (JS Object) of supported commit types. |
+| scopes | undefined | A list (JS Array) of scopes that will be available for selection. Note that adding this will change the scope field from Inquirer 'input' to 'list'. |
 
 ### Commitlint
 
