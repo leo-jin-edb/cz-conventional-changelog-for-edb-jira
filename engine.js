@@ -88,7 +88,7 @@ module.exports = function(options) {
           type: 'input',
           name: 'jira',
           message:
-            'Enter JIRA issue (' +
+            'Enter JIRA Sub-task ticket (' +
             getFromOptionsOrDefaults('jiraPrefix') +
             '-12345):',
           when: options.jiraMode,

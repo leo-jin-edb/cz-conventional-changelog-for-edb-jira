@@ -1,5 +1,5 @@
 {
-  "name": "@digitalroute/cz-conventional-changelog-for-jira",
+  "name": "cz-conventional-changelog-for-edb-jira",
   "version": "0.0.0-semantically-released",
   "description": "Commitizen adapter following the conventional-changelog format and also asking for JIRA issue.",
   "main": "index.js",
@@ -9,16 +9,16 @@
     "format": "prettier --write *.js",
     "semantic-release": "semantic-release"
   },
-  "homepage": "https://github.com/digitalroute/cz-conventional-changelog-for-jira",
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/digitalroute/cz-conventional-changelog-for-jira.git"
+    "url": ""
   },
   "engineStrict": true,
   "engines": {
     "node": ">= 10"
   },
-  "author": "Marcus Johansson <polarn@gmail.com>",
+  "author": "Leo Jin",
   "license": "MIT",
   "dependencies": {
     "boxen": "^5.0.0",
